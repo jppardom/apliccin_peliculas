@@ -7,7 +7,9 @@
     <a href={{route('peliculas.create')}}>Crear Pelicula</a>
     <ul>
         @foreach ($peliculas as $pelicula)
-            <li>{{$pelicula->nombre}}</li>            
+            <li>
+                <a href={{route('peliculas.show', $pelicula->id)}}>{{$pelicula->nombre}}</a>
+            </li>            
         @endforeach
     </ul>
     {{$peliculas->links()}}

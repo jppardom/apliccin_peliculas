@@ -16,8 +16,7 @@ class PeliculasController extends Controller
         return view('peliculas.create');
     }
 
-    public function show($pelicula, $categoria=null){
-        //return view('peliculas.show', ['pelicula' => $pelicula, 'categoria'=>$categoria]);
-        return view('peliculas.show', compact('pelicula', 'categoria'));
+    public function show(Pelicula $pelicula){
+        return view('peliculas.show', compact('pelicula'));
     }
 }

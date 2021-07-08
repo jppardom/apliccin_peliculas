@@ -1,18 +1,13 @@
 @extends('modelo.plantilla')
 
-@section('title', 'Página de Películas')
+@section('title', 'Página de Películas'. $pelicula->nombre)
 
 @section('content')
-@php
-if ($categoria == null) {
-    echo "<h1> Página de la Pelicula:  $pelicula </h1>";
-} else {
 
-    echo "<h1>Bienvenidos a la pelicula: $pelicula, de la categoria $categoria </h1";
-}
-    
-@endphp
-
-
+    <h1>Bienvenido a la película: {{$pelicula->nombre}}</h1>
+    <a href={{route('peliculas.index')}}>Volver al inicio</a>
+    <p><strong>Categoria: </strong>{{$pelicula->categoria}}</p>
+    <p><strong>Descripcion: </strong></p>
+    <p>{{$pelicula->descripcion}}</p>
 @endsection
 

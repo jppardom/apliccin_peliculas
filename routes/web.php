@@ -21,6 +21,6 @@ Route::get('peliculas', [PeliculasController::class, 'index'])->name('peliculas.
 
 Route::get('peliculas/create', [PeliculasController::class, 'create'])->name('peliculas.create');
 
-Route::get('peliculas/{pelicula}/{categoria?}', [PeliculasController::class, 'show'])->name('Peliculas.show');
+Route::get('peliculas/{pelicula}', [PeliculasController::class, 'show'])->name('peliculas.show');
 
 
