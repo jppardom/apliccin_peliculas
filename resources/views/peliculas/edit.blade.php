@@ -11,14 +11,22 @@
         <label>
             Nombre:
             <br>
-            <input type="text" name= "name" value="{{$pelicula->nombre}}">
+            <input type="text" name= "nombre" value="{{old('nombre', $pelicula->nombre)}}">
+            <br>
+            @error('nombre')
+                <small>*{{$message}}</small>
+            @enderror
             <br>
         </label>
         
         <label>
             Descripción:
             <br>
-            <textarea name="descripcion" rows="5">{{$pelicula->descripcion}}</textarea>
+            <textarea name="descripcion" rows="5">{{old('descripcion', $pelicula->descripcion)}}</textarea>
+            <br>
+            @error('descripcion')
+                <small>*{{$message}}</small>
+            @enderror
             <br>
         </label>
         
@@ -26,7 +34,11 @@
            
             Categoria:
             <br>
-            <input type="text" name="categoria" value ="{{$pelicula->descripcion}}">
+            <input type="text" name="categoria" value ="{{old('categoria', $pelicula->categoria)}}">
+            <br>
+            @error('categoria')
+                <small>*{{$message}}</small>
+            @enderror
             <br>
         </label>
         

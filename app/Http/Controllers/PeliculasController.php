@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pelicula;
 use Illuminate\Http\Request;
+use App\Http\Requests\RequestPeliculas;
 
 class PeliculasController extends Controller
 {
@@ -16,9 +17,10 @@ class PeliculasController extends Controller
         return view('peliculas.create');
     }
 
-    public function store(Request $request){
+    public function store(RequestPeliculas $request){
+
         $pelicula = new Pelicula;
-        $pelicula->nombre = $request->name;
+        $pelicula->nombre = $request->nombre;
         $pelicula->descripcion = $request->descripcion;
         $pelicula->categoria = $request->categoria;
         $pelicula->save();
@@ -33,8 +35,8 @@ class PeliculasController extends Controller
         return view('peliculas.edit', compact('pelicula'));
     }
 
-    public function update (Request $request, Pelicula $pelicula){
-        $pelicula->nombre = $request->name;
+    public function update (RequestPeliculas $request, Pelicula $pelicula){
+        $pelicula->nombre = $request->nombre;
         $pelicula->descripcion = $request->descripcion;
         $pelicula->categoria = $request->categoria;
         $pelicula->save();
