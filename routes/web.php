@@ -17,16 +17,13 @@ use App\Http\Controllers\PeliculasController;
 
 Route::get('/', HomeControler::class);
 
-Route::get('peliculas', [PeliculasController::class, 'index'])->name('peliculas.index');
+Route::resource('peliculas', PeliculasController::class);
 
-Route::get('peliculas/create', [PeliculasController::class, 'create'])->name('peliculas.create');
-
-Route::post('peliculas', [PeliculasController::class, 'store'])->name('peliculas.store');
-
-Route::get('peliculas/{pelicula}', [PeliculasController::class, 'show'])->name('peliculas.show');
-
-Route::get('peliculas/{pelicula}/edit', [PeliculasController::class, 'edit'])->name('peliculas.edit');
-
-Route::put('peliculas/{pelicula}', [PeliculasController::class, 'update'])->name('peliculas.update');
-
+// Route::get('peliculas', [PeliculasController::class, 'index'])->name('peliculas.index');
+// Route::get('peliculas/create', [PeliculasController::class, 'create'])->name('peliculas.create');
+// Route::post('peliculas', [PeliculasController::class, 'store'])->name('peliculas.store');
+// Route::get('peliculas/{pelicula}', [PeliculasController::class, 'show'])->name('peliculas.show');
+// Route::get('peliculas/{pelicula}/edit', [PeliculasController::class, 'edit'])->name('peliculas.edit');
+// Route::put('peliculas/{pelicula}', [PeliculasController::class, 'update'])->name('peliculas.update');
+// Route::delete('peliculas/{pelicula}', [PeliculasController::class, 'destroy'])->name('peliculas.destroy');
 

@@ -16,6 +16,7 @@ class CreatePeliculasTable extends Migration
         Schema::create('peliculas', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->string('slug');
             $table-> text('descripcion');
             $table->string('categoria');
             $table->timestamps();
