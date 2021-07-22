@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Pelicula;
 use Illuminate\Http\Request;
 use App\Http\Requests\RequestPeliculas;
-use Illuminate\Support\Str;
 
 class PeliculasController extends Controller
 {
@@ -20,8 +19,6 @@ class PeliculasController extends Controller
 
     public function store(RequestPeliculas $request){
 
-        $request->slug = Str::slug($request->nombre);
-        return $request->all();
         $pelicula = Pelicula::create($request->all());
         return redirect()->route('peliculas.show', $pelicula);
     }
