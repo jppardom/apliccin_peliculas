@@ -6,8 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {{-- favico --}}
     <title>@yield('title')</title>
+    <style>
+        .active{
+            color: brown;    
+        }
+    </style>
 </head>
 <body>
+    @include('modelo.partials.header')
+
     @yield('content')
+    @include('modelo.partials.footer')
 </body>
 </html>

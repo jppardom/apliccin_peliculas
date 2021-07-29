@@ -15,9 +15,11 @@ use App\Http\Controllers\PeliculasController;
 |
 */
 
-Route::get('/', HomeControler::class);
+Route::get('/', HomeControler::class)->name('home');
 
 Route::resource('peliculas', PeliculasController::class);
+
+Route::view('contactos', 'contactos')->name('contactos');
 
 // Route::get('peliculas', [PeliculasController::class, 'index'])->name('peliculas.index');
 // Route::get('peliculas/create', [PeliculasController::class, 'create'])->name('peliculas.create');
