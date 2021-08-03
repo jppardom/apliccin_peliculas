@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeControler;
+use App\Http\Controllers\InformacionControllers;
 use App\Http\Controllers\PeliculasController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +22,10 @@ Route::get('/', HomeControler::class)->name('home');
 Route::resource('peliculas', PeliculasController::class);
 
 Route::view('contactos', 'contactos')->name('contactos');
+
+Route::get('informacion', [InformacionControllers::class, 'index'])->name('informacion.index');
+
+Route::post('informacion', [InformacionControllers::class, 'store'])->name('informacion.store');
 
 // Route::get('peliculas', [PeliculasController::class, 'index'])->name('peliculas.index');
 // Route::get('peliculas/create', [PeliculasController::class, 'create'])->name('peliculas.create');

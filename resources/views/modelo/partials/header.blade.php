@@ -8,7 +8,10 @@
 
             </li>
             <li> <a href="{{route('contactos')}}" class = {{request()->routeIs('contactos') ? 'active' : "" }} >Contactos</a>
+            </li>
 
+            <li>
+                <a href="{{route('informacion.index')}}" class = {{request()->routeIs('informacion.*') ? 'active' : "" }}>Información</a>
             </li>
         </ul>
     </nav>

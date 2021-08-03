@@ -8,7 +8,9 @@
     <title>@yield('title')</title>
     <style>
         .active{
-            color: brown;    
+            color:brown;
+            font-weight: bold;
+            background-color: beige;
         }
     </style>
 </head>
